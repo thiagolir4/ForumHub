@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 📚 Índice
 Tecnologias Utilizadas
 Requisitos
@@ -125,3 +126,6 @@ spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
    Faça commit das suas alterações (git commit -m 'Adiciona nova feature').
    Envie o push para a branch (git push origin minha-feature).
    Abra um Pull Request.
+=======
+# ForumHub
+>>>>>>> 2d5d0368cfc8b35c27a7c166830f77175343034b
