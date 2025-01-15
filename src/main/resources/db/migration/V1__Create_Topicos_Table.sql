@@ -1,0 +1,24 @@
+CREATE TABLE topico (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(255) NOT NULL,
+    mensagem TEXT NOT NULL,
+    data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    estado ENUM('ABERTO', 'FECHADO') NOT NULL,
+    autor_id BIGINT NOT NULL,
+    curso_id BIGINT NOT NULL,
+    UNIQUE KEY (titulo, mensagem)
+);
+
+CREATE TABLE autor (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL
+);
+
+CREATE TABLE curso (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL
+);
+
+ALTER TABLE topico ADD CONSTRAINT fk_autor FOREIGN KEY (autor_id) REFERENCES autor(id);
+ALTER TABLE topico ADD CONSTRAINT fk_curso FOREIGN KEY (curso_id) REFERENCES curso(id);
